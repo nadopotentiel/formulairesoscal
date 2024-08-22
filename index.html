@@ -8,16 +8,44 @@
         body {
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alignement en haut */
+            align-items: flex-start;
             height: 100vh;
             margin: 0;
-            padding-top: 20px; /* Ajout d'un peu d'espace en haut */
-            background-color: #f4f4f4; /* Optionnel : changer la couleur de fond */
+            padding-top: 20px;
+            background-color: #f4f4f4;
+        }
+        #form-button {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #9900EF;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div data-fillout-id="1Y2yZMx3Qous" data-fillout-embed-type="popup" data-fillout-button-text="SOS NADO" data-fillout-dynamic-resize data-fillout-button-color="#9900EF" data-fillout-button-size="medium" data-fillout-inherit-parameters data-fillout-popup-size="medium"></div>
-    <script src="https://server.fillout.com/embed/v1/"></script>
+
+    <button id="form-button">SOS NADO</button>
+
+    <script>
+        document.getElementById('form-button').addEventListener('click', function() {
+            // URL du formulaire Fillout
+            var formUrl = 'https://server.fillout.com/embed/v1/1Y2yZMx3Qous';
+
+            // Dimensions de la fenêtre popup
+            var popupWidth = 600;
+            var popupHeight = 400;
+
+            // Calculer la position centrale de la fenêtre
+            var left = (screen.width / 2) - (popupWidth / 2);
+            var top = (screen.height / 2) - (popupHeight / 2);
+
+            // Ouvrir une nouvelle fenêtre popup
+            window.open(formUrl, 'Formulaire SOS NADO', 'width=' + popupWidth + ', height=' + popupHeight + ', top=' + top + ', left=' + left);
+        });
+    </script>
+
 </body>
 </html>
